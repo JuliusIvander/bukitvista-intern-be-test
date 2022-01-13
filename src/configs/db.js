@@ -5,6 +5,7 @@ const { Sequelize } = require("sequelize");
 const options = {
   host: "localhost",
   dialect: "mysql",
+  logger: false,
 };
 
 const sequelize = new Sequelize(
