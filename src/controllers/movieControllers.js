@@ -1,4 +1,4 @@
-const { Movies } = require("../models/models");
+const Movies = require("../models/movies");
 const axios = require("axios");
 
 const {
