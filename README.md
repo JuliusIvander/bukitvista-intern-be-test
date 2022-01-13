@@ -9,8 +9,8 @@ In this study case there are 2 user stories:
 
 ### Technology Stacks
 
-- [Express] (https://expressjs.com/)
-- [Sequelize] (https://sequelize.org/)
+- [Express](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
 - [POSTMAN : For my testing purpose](https://www.postman.com/)
 - [Laragon/HeidiSQL : For my local database](https://laragon.org/)
 
