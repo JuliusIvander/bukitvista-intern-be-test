@@ -1,61 +1,73 @@
-## Bukit Vista Programmer Test - Node Js Back End
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-### About Study Case
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-In this study case there are 2 user stories:
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-1. User want to create private API server that will return image url of movie poster, using third party service OMDB to get that url.
-2. User need to be able to fetch all poster of their own favorite movies.
+## Description
 
-### Technology Stacks
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-- [Express](https://expressjs.com/)
-- [Sequelize](https://sequelize.org/)
-- [POSTMAN : For my testing purpose](https://www.postman.com/)
-- [Laragon/HeidiSQL : For my local database](https://laragon.org/)
+## Installation
 
-### Getting Started
-
-- Clone the repository
-
-```
-git clone https://github.com/JuliusIvander/bukitvista-intern-be-test.git
-```
-
-- Entering the directory and install depedencies
-
-```
-npm install
-```
-
-- Duplicate `.env.example` and rename it into `.env`
-- Edit and fill `.env` with format:
-
-```
-DB_NAME = database_name
-DB_USERNAME = database_username
-DB_PASSWORD = database_password
-JWT_SECRET = jwt_secret_token
-API_KEY = OMDB_api_key
+```bash
+$ npm install
 ```
 
-- After successfully install all the dependency and filling the `.env`, run the project
+## Running the app
 
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
 ```
-npm run dev
+
+## Test
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
 ```
 
-- You can access the backend API in `http://localhost:5000`
+## Support
 
-### Documentations
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-In this API, there are 6 endpoints
+## Stay in touch
 
-1. `POST /auth/login`
-2. `POST /auth/register`
-3. `GET /movies`
-4. `GET /movies/:title`
-5. `GET /movies/favorite`
-6. `POST /movies/favorite`
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-Detailed documentation: [https://documenter.getpostman.com/view/10484939/UVXhqc5X](https://documenter.getpostman.com/view/10484939/UVXhqc5X)
+## License
+
+Nest is [MIT licensed](LICENSE).
