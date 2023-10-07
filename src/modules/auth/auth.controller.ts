@@ -2,8 +2,6 @@ import {
   Controller,
   Post,
   Body,
-  HttpCode,
-  HttpStatus,
   BadRequestException,
   UseInterceptors,
   ClassSerializerInterceptor,
@@ -12,23 +10,26 @@ import {
 import { AuthService } from './auth.service';
 import { SignUpDto } from './dto/sign-up.dto';
 import { SignInDto } from './dto/sign-in.dto';
+import { TransformInterceptor } from 'src/interceptors/transform.interceptor';
+import { ResponseMessage } from 'src/decorators/response-message.decorator';
 
 @Controller('auth')
+@UseInterceptors(TransformInterceptor)
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @HttpCode(HttpStatus.CREATED)
   @Post('register')
+  @ResponseMessage('User has been created!')
   async signUp(@Body() signUpDto: SignUpDto) {
     const data = await this.authService.signUp(signUpDto);
     if (data) {
-      return { message: 'User has been created!' };
+      return 'User has been created!';
     }
     throw new BadRequestException();
   }
 
-  @HttpCode(HttpStatus.OK)
   @Post('login')
+  @ResponseMessage('User Logged In')
   @UseInterceptors(ClassSerializerInterceptor)
   signIn(@Body() signInDto: SignInDto) {
     return this.authService.signIn(signInDto);

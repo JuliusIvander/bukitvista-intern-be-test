@@ -7,6 +7,8 @@ import { AuthModule } from './modules/auth/auth.module';
 import { UserModule } from './modules/user/user.module';
 import { FavoriteMovieModule } from './modules/favorite-movie/favorite-movie.module';
 import { DatabaseConfig } from './configs/database.config';
+import { HttpExceptionFilter } from './filters/http-exception.filter';
+import { APP_FILTER } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -25,6 +27,12 @@ import { DatabaseConfig } from './configs/database.config';
     FavoriteMovieModule,
   ],
   controllers: [],
-  providers: [JwtService],
+  providers: [
+    JwtService,
+    {
+      provide: APP_FILTER,
+      useClass: HttpExceptionFilter,
+    },
+  ],
 })
 export class AppModule {}
