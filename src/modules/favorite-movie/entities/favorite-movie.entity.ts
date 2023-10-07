@@ -1,6 +1,7 @@
+import { Column, Entity, ManyToOne } from 'typeorm';
+
 import { BaseEntity } from 'src/models/base.entity';
 import { User } from 'src/modules/user/entities/user.entity';
-import { Column, Entity, ManyToOne } from 'typeorm';
 
 @Entity()
 export class FavoriteMovie extends BaseEntity {

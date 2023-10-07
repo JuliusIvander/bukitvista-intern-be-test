@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { HttpModule } from '@nestjs/axios';
 
 import { UserModule } from '../user/user.module';
 import { FavoriteMovie } from './entities/favorite-movie.entity';
 import { FavoriteMovieService } from './favorite-movie.service';
 import { FavoriteMovieController } from './favorite-movie.controller';
-import { HttpModule } from '@nestjs/axios';
 
 @Module({
   imports: [

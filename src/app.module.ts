@@ -1,3 +1,4 @@
+import { APP_FILTER } from '@nestjs/core';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { JwtModule, JwtService } from '@nestjs/jwt';
 import { ConfigModule } from '@nestjs/config';
@@ -6,9 +7,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './modules/auth/auth.module';
 import { UserModule } from './modules/user/user.module';
 import { FavoriteMovieModule } from './modules/favorite-movie/favorite-movie.module';
+
 import { DatabaseConfig } from './configs/database.config';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
-import { APP_FILTER } from '@nestjs/core';
 import { LoggerMiddleware } from './middlewares/logger.middleware';
 
 @Module({
