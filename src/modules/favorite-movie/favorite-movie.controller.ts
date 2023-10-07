@@ -7,13 +7,18 @@ import {
   ForbiddenException,
   UseGuards,
   BadRequestException,
+  UseInterceptors,
 } from '@nestjs/common';
+
 import { FavoriteMovieService } from './favorite-movie.service';
-import { AuthGuard } from '../auth/auth.guard';
-import { User } from '../../decorators/user.decorator';
 import { AddFavMovieDto } from './dto/add-fav-movie.dto';
 
+import { AuthGuard } from '../auth/auth.guard';
+import { User } from '../../decorators/user.decorator';
+import { TransformInterceptor } from 'src/interceptors/transform.interceptor';
+
 @Controller('movies')
+@UseInterceptors(TransformInterceptor)
 export class FavoriteMovieController {
   constructor(private readonly favoriteMovieService: FavoriteMovieService) {}
 
