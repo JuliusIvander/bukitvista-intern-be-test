@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { JwtModule, JwtService } from '@nestjs/jwt';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -9,6 +9,7 @@ import { FavoriteMovieModule } from './modules/favorite-movie/favorite-movie.mod
 import { DatabaseConfig } from './configs/database.config';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { APP_FILTER } from '@nestjs/core';
+import { LoggerMiddleware } from './middlewares/logger.middleware';
 
 @Module({
   imports: [
@@ -35,4 +36,8 @@ import { APP_FILTER } from '@nestjs/core';
     },
   ],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes('*');
+  }
+}
