@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { FavoriteMovieService } from './favorite-movie.service';
 import { AuthGuard } from '../auth/auth.guard';
-import { User } from '../user/user.decorator';
+import { User } from '../../decorators/user.decorator';
 import { AddFavMovieDto } from './dto/add-fav-movie.dto';
 
 @Controller('movies')
